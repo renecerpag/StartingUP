@@ -1,148 +1,231 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STARTING UP</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    transition: background 0.4s, color 0.4s;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #111;
+    border-bottom: 1px solid gold;
+  }
+  nav a {
+    margin: 0 15px;
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .section {
+    display: none;
+    padding: 40px;
+  }
+  .active { display: block; }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+    letter-spacing: 2px;
+  }
+  .card {
+    background: #111;
+    border: 1px solid gold;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .video-card {
+    border: 1px solid silver;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+  }
+  button.learn {
+    background: gold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #stockChart { width: 100%; max-width: 700px; }
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="es"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Acciones Bursátiles - Proyecto Personal&lt;/title&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Estilos simples --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #f4f4f4;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #004aad;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 90%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #004aad;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #0077cc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: underline;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.video-list a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>canvas {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chart.js para la gráfica interactiva --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Acciones Bursátiles&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Proyecto Personal · ¿Qué son y cómo funcionan?&lt;/p&gt;</p>
-<p class="p1">&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;¿Qué son las acciones bursátiles?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Las acciones bursátiles representan una parte de la propiedad de una empresa.<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>Cuando una persona compra una acción, se convierte en accionista y adquiere ciertos<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>derechos, como recibir dividendos y votar en decisiones importantes de la compañía.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;¿Cómo puedo comprar acciones?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Para comprar acciones, lo más común es abrir una cuenta en una casa de bolsa<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>o plataforma digital autorizada. Después, solo debes depositar dinero, elegir<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>la empresa en la que deseas invertir y realizar la compra desde la aplicación o página web.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Pasos básicos:&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;1. Abrir una cuenta en una casa de bolsa o bróker.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;2. Validar identidad y datos personales.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;3. Depositar dinero en tu cuenta.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;4. Buscar las acciones que deseas comprar.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;5. Confirmar la transacción.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;6. Dar seguimiento a tu inversión.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Videos sobre acciones bursátiles&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="video-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/Gc2en3nHxA4" target="_blank"&gt;Video 1 - ¿Qué son las acciones?&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/Oo8-n4rp0JI" target="_blank"&gt;Video 2 - Bolsa de valores explicada&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/9f7sKxHkJpU" target="_blank"&gt;Video 3 - Cómo funciona invertir&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/7k8pVxQ8c8g" target="_blank"&gt;Video 4 - Comprar acciones paso a paso&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/a8H-1MRPJ3o" target="_blank"&gt;Video 5 - Conceptos básicos de inversión&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/JZ9GwoePo8Q" target="_blank"&gt;Video 6 - Tips de inversión&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Gráfica interactiva del precio de una acción&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Esta gráfica muestra un ejemplo del comportamiento de una acción durante 6 meses.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;canvas id="graficaAccion"&gt;&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const ctx = document.getElementById('graficaAccion');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>new Chart(ctx, {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>type: 'line',</p>
-<p class="p1"><span class="Apple-converted-space">            </span>data: {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],</p>
-<p class="p1"><span class="Apple-converted-space">                </span>datasets: [{</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>label: 'Precio de la acción (USD)',</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>data: [120, 135, 128, 150, 160, 172],</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>borderWidth: 3,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}]</p>
-<p class="p1"><span class="Apple-converted-space">            </span>},</p>
-<p class="p1"><span class="Apple-converted-space">            </span>options: {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>responsive: true,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>scales: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>y: { beginAtZero: false }</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<header>
+  <div class="logo" style="display:flex;align-items:center;gap:10px;">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="gold" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 14 12 10 16 14"/>
+  </svg>
+  STARTING UP
+</div>
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('conocenos')">Conócenos</a>
+    <a onclick="showSection('videos')">Videos</a>
+    <a onclick="showSection('graficas')">Gráficas</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section active" data-aos="fade-up">
+  <h1>Bienvenido a STARTING UP</h1>
+  <p>Esta página está diseñada para ayudarte a entender el mundo de las acciones bursátiles con información clara, visual, sencilla y especialmente pensada para estudiantes de preparatoria que quieren comenzar en el mundo financiero de forma responsable.</p>
+
+  <div class="card" data-aos="fade-up">
+    <h2>¿Qué son las acciones?</h2>
+    <p>Las acciones representan una pequeña parte de una empresa. Al comprar una, te conviertes en propietario parcial de esa compañía, lo que significa que participas en sus ganancias, decisiones y crecimiento.</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="100">
+    <h2>¿Por qué invertir?</h2>
+    <p>Invertir permite hacer crecer tu dinero con el paso del tiempo. A diferencia de solo ahorrar, invertir te da la oportunidad de obtener rendimientos mayores, aprender sobre economía y prepararte para tu futuro financiero.</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="150">
+    <h2>¿Es complicado?</h2>
+    <p>No. Aunque parece un tema difícil, entender las acciones es mucho más fácil cuando se explica con ejemplos visuales, videos y pasos claros. Este sitio fue creado exactamente para eso.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1642790106114-2bd395673eee?auto=format&fit=crop&w=1200&q=80" width="100%" data-aos="zoom-in" alt="Gráfica minimalista" />
+  
+  <!-- PASO A PASO -->
+  <div class="card" data-aos="fade-up" data-aos-delay="200">
+    <h2>Paso a paso para comprar acciones</h2>
+    <ol>
+      <li>Abrir una cuenta en una casa de bolsa regulada.</li>
+      <li>Depositar fondos desde tu banco.</li>
+      <li>Elegir la empresa en la que quieres invertir.</li>
+      <li>Analizar su gráfica, historial y noticias.</li>
+      <li>Realizar la compra desde la plataforma.</li>
+      <li>Dar seguimiento a tu inversión.</li>
+    </ol>
+  </div>
+
+  <!-- LINEA DEL TIEMPO -->
+  <div class="card" data-aos="fade-left" data-aos-delay="250">
+    <h2>Línea del tiempo del inversionista principiante</h2>
+    <ul>
+      <li><strong>Día 1:</strong> Aprendes qué son las acciones.</li>
+      <li><strong>Día 2:</strong> Abres una cuenta en una casa de bolsa.</li>
+      <li><strong>Día 3:</strong> Haces tu primer análisis básico.</li>
+      <li><strong>Día 4:</strong> Compras tu primera acción.</li>
+      <li><strong>Semana 2:</strong> Comienzas a entender el mercado.</li>
+      <li><strong>Mes 1:</strong> Evalúas tus resultados y mejoras.</li>
+    </ul>
+  </div>
+
+  <!-- TARJETAS DE CONCEPTOS -->
+  <div class="card" data-aos="fade-up" data-aos-delay="300">
+    <h2>Conceptos clave</h2>
+    <ul>
+      <li><strong>Acción:</strong> Parte de una empresa.</li>
+      <li><strong>Bolsa:</strong> Lugar donde se compran y venden acciones.</li>
+      <li><strong>Diversificación:</strong> No invertir todo en un mismo lugar.</li>
+      <li><strong>Riesgo:</strong> Posibilidad de perder dinero.</li>
+      <li><strong>Rendimiento:</strong> Ganancia obtenida por invertir.</li>
+    </ul>
+  </div>
+
+  <!-- GLOSARIO -->
+  <div class="card" data-aos="fade-right" data-aos-delay="350">
+    <h2>Glosario rápido</h2>
+    <p><strong>Broker:</strong> Plataforma para comprar acciones.</p>
+    <p><strong>Portafolio:</strong> Conjunto de tus inversiones.</p>
+    <p><strong>Volatilidad:</strong> Variación del precio en poco tiempo.</p>
+    <p><strong>Dividendos:</strong> Pagos que algunas empresas dan a sus accionistas.</p>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center; margin-top:30px;" data-aos="zoom-in" data-aos-delay="400">
+    <button style="background:gold; color:#000; padding:15px 25px; border:none; border-radius:12px; font-size:18px; cursor:pointer; font-weight:bold;">Comienza aquí</button>
+  </div>
+
+</section>
+<!-- CONÓCENOS -->
+<section id="conocenos" class="section" data-aos="fade-up">
+  <h1>Conócenos</h1>
+  <p>Soy un adolescente de 15 años apasionado por el emprendimiento y las finanzas. Creé este sitio web para ayudar a otras personas de mi edad (y mayores) a entender el mundo de las acciones de una manera sencilla, clara y visual.</p>
+  <div class="card" data-aos="flip-left">
+    <h2>Mi objetivo</h2>
+    <p>Explicar cómo funcionan las acciones, los pasos para comprarlas y ofrecer recursos confiables para aprender más.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a" width="100%" data-aos="fade-up" />
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" class="section" data-aos="fade-up">
+  <h1>Videos recomendados</h1>
+  <div class="video-card" data-aos="fade-right">
+    <p>Introducción a la bolsa</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=-DKtkBQM-qo')">Learn now</button>
+  </div>
+  <div class="video-card" data-aos="fade-right">
+    <p>Cómo funciona la bolsa</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=qkuT4qu7ZgQ')">Learn now</button>
+  </div>
+  <div class="video-card" data-aos="fade-right">
+    <p>Conceptos básicos</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=RAEbE__r0qk')">Learn now</button>
+  </div>
+  <div class="video-card" data-aos="fade-right">
+    <p>Invertir siendo joven</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=8Ij7A1VCB7I')">Learn now</button>
+  </div>
+  <div class="video-card" data-aos="fade-right">
+    <p>Errores comunes</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=Ay4fmZdZqJE')">Learn now</button>
+  </div>
+  <div class="video-card" data-aos="fade-right">
+    <p>Cómo empezar</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=bb6_M_srMBk')">Learn now</button>
+  </div>
+</section>
+
+<!-- GRÁFICAS -->
+<section id="graficas" class="section" data-aos="fade-up">
+  <h1>Gráfica interactiva</h1>
+  <canvas id="stockChart"></canvas>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// GRAPH
+let chart;
+async function loadChart() {
+  const ctx = document.getElementById('stockChart').getContext('2d');
+  const response = await fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=F08ZQ7OG7SR35UO1");
+  const data = await response.json();
+  const series = data["Time Series (Daily)"];
+  const labels = Object.keys(series).slice(0, 10).reverse();
+  const values = labels.map(d => series[d]["4. close"]);
+  if (chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets: [{ label: "AAPL", data: values, borderColor: 'gold' }] },
+  });
+}
+loadChart();
+</script>
 </body>
 </html>
