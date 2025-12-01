@@ -1,247 +1,172 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STARTING UP</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #111;
+      border-bottom: 1px solid gold;
+    }
+    nav a {
+      margin: 0 15px;
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .section { display: none; padding: 40px; }
+    .active { display: block; }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: gold;
+      letter-spacing: 2px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid gold;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .video-card {
+      border: 1px solid silver;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+    button.learn {
+      background: gold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #stockChart { width: 100%; max-width: 700px; }
   </style>
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="es"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1">&lt;title&gt;STARTING UP&lt;/title&gt;</p>
-<p class="p1">&lt;link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: #000;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>transition: background 0.4s, color 0.4s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: #111;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid gold;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>nav a {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin: 0 15px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color: gold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.active { display: block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.logo {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color: gold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.card {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: #111;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid gold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.video-card {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid silver;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin: 15px 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>button.learn {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: gold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>#stockChart { width: 100%; max-width: 700px; }</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="logo" style="display:flex;align-items:center;gap:10px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="gold" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;circle cx="12" cy="12" r="10"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;polyline points="8 14 12 10 16 14"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>STARTING UP</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a onclick="showSection('home')"&gt;Home&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a onclick="showSection('conocenos')"&gt;Conócenos&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a onclick="showSection('videos')"&gt;Videos&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a onclick="showSection('graficas')"&gt;Gráficas&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
-<p class="p1">&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- HOME --&gt;</p>
-<p class="p1">&lt;section id="home" class="section active" data-aos="fade-up"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Bienvenido a STARTING UP&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Esta página está diseñada para ayudarte a entender el mundo de las acciones bursátiles con información clara, visual, sencilla y especialmente pensada para estudiantes de preparatoria que quieren comenzar en el mundo financiero de forma responsable.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-up"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;¿Qué son las acciones?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Las acciones representan una pequeña parte de una empresa. Al comprar una, te conviertes en propietario parcial de esa compañía, lo que significa que participas en sus ganancias, decisiones y crecimiento.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-up" data-aos-delay="100"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;¿Por qué invertir?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Invertir permite hacer crecer tu dinero con el paso del tiempo. A diferencia de solo ahorrar, invertir te da la oportunidad de obtener rendimientos mayores, aprender sobre economía y prepararte para tu futuro financiero.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-up" data-aos-delay="150"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;¿Es complicado?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;No. Aunque parece un tema difícil, entender las acciones es mucho más fácil cuando se explica con ejemplos visuales, videos y pasos claros. Este sitio fue creado exactamente para eso.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;img src="https://images.unsplash.com/photo-1642790106114-2bd395673eee?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="100%" data-aos="zoom-in" alt="Gráfica minimalista" /&gt;</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- PASO A PASO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-up" data-aos-delay="200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Paso a paso para comprar acciones&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Abrir una cuenta en una casa de bolsa regulada.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Depositar fondos desde tu banco.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Elegir la empresa en la que quieres invertir.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Analizar su gráfica, historial y noticias.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Realizar la compra desde la plataforma.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Dar seguimiento a tu inversión.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- LINEA DEL TIEMPO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-left" data-aos-delay="250"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Línea del tiempo del inversionista principiante&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Día 1:&lt;/strong&gt; Aprendes qué son las acciones.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Día 2:&lt;/strong&gt; Abres una cuenta en una casa de bolsa.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Día 3:&lt;/strong&gt; Haces tu primer análisis básico.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Día 4:&lt;/strong&gt; Compras tu primera acción.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Semana 2:&lt;/strong&gt; Comienzas a entender el mercado.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Mes 1:&lt;/strong&gt; Evalúas tus resultados y mejoras.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- TARJETAS DE CONCEPTOS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-up" data-aos-delay="300"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Conceptos clave&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Acción:&lt;/strong&gt; Parte de una empresa.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Bolsa:&lt;/strong&gt; Lugar donde se compran y venden acciones.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Diversificación:&lt;/strong&gt; No invertir todo en un mismo lugar.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Riesgo:&lt;/strong&gt; Posibilidad de perder dinero.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;strong&gt;Rendimiento:&lt;/strong&gt; Ganancia obtenida por invertir.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- GLOSARIO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="fade-right" data-aos-delay="350"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Glosario rápido&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;Broker:&lt;/strong&gt; Plataforma para comprar acciones.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;Portafolio:&lt;/strong&gt; Conjunto de tus inversiones.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;Volatilidad:&lt;/strong&gt; Variación del precio en poco tiempo.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;Dividendos:&lt;/strong&gt; Pagos que algunas empresas dan a sus accionistas.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CTA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="text-align:center; margin-top:30px;" data-aos="zoom-in" data-aos-delay="400"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button style="background:gold; color:#000; padding:15px 25px; border:none; border-radius:12px; font-size:18px; cursor:pointer; font-weight:bold;"&gt;Comienza aquí&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p1">&lt;!-- CONÓCENOS --&gt;</p>
-<p class="p1">&lt;section id="conocenos" class="section" data-aos="fade-up"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Conócenos&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Soy un adolescente de 15 años apasionado por el emprendimiento y las finanzas. Creé este sitio web para ayudar a otras personas de mi edad (y mayores) a entender el mundo de las acciones de una manera sencilla, clara y visual.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card" data-aos="flip-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Mi objetivo&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Explicar cómo funcionan las acciones, los pasos para comprarlas y ofrecer recursos confiables para aprender más.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a" width="100%" data-aos="fade-up" /&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- VIDEOS --&gt;</p>
-<p class="p1">&lt;section id="videos" class="section" data-aos="fade-up"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Videos recomendados&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="video-card" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Introducción a la bolsa&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="learn" onclick="window.open('https://www.youtube.com/watch?v=-DKtkBQM-qo')"&gt;Learn now&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="video-card" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Cómo funciona la bolsa&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="learn" onclick="window.open('https://www.youtube.com/watch?v=qkuT4qu7ZgQ')"&gt;Learn now&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="video-card" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Conceptos básicos&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="learn" onclick="window.open('https://www.youtube.com/watch?v=RAEbE__r0qk')"&gt;Learn now&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="video-card" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Invertir siendo joven&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="learn" onclick="window.open('https://www.youtube.com/watch?v=8Ij7A1VCB7I')"&gt;Learn now&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="video-card" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Errores comunes&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="learn" onclick="window.open('https://www.youtube.com/watch?v=Ay4fmZdZqJE')"&gt;Learn now&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="video-card" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Cómo empezar&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="learn" onclick="window.open('https://www.youtube.com/watch?v=bb6_M_srMBk')"&gt;Learn now&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- GRÁFICAS --&gt;</p>
-<p class="p1">&lt;section id="graficas" class="section" data-aos="fade-up"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Gráfica interactiva&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;canvas id="stockChart"&gt;&lt;/canvas&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;script src="https://unpkg.com/aos@2.3.1/dist/aos.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">AOS.init();</p>
-<p class="p2"><br></p>
-<p class="p1">function showSection(id) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.section').forEach(sec =&gt; sec.classList.remove('active'));</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById(id).classList.add('active');</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">// GRAPH</p>
-<p class="p1">let chart;</p>
-<p class="p1">async function loadChart() {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const ctx = document.getElementById('stockChart').getContext('2d');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const response = await fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&amp;symbol=AAPL&amp;apikey=F08ZQ7OG7SR35UO1");</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const data = await response.json();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const series = data["Time Series (Daily)"];</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const labels = Object.keys(series).slice(0, 10).reverse();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const values = labels.map(d =&gt; series[d]["4. close"]);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if (chart) chart.destroy();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>chart = new Chart(ctx, {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>type: 'line',</p>
-<p class="p1"><span class="Apple-converted-space">    </span>data: { labels, datasets: [{ label: "AAPL", data: values, borderColor: 'gold' }] },</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1">}</p>
-<p class="p1">loadChart();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<header>
+  <div class="logo" style="display:flex;align-items:center;gap:10px;">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="gold" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="8 14 12 10 16 14"/>
+    </svg>
+    STARTING UP
+  </div>
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('conocenos')">Conócenos</a>
+    <a onclick="showSection('videos')">Videos</a>
+    <a onclick="showSection('graficas')">Gráficas</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section active" data-aos="fade-up">
+  <h1>Bienvenido a STARTING UP</h1>
+  <p>Esta página está diseñada para ayudarte a entender el mundo de las acciones bursátiles con información clara y visual.</p>
+
+  <div class="card" data-aos="fade-up">
+    <h2>¿Qué son las acciones?</h2>
+    <p>Las acciones representan una pequeña parte de una empresa...</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="100">
+    <h2>¿Por qué invertir?</h2>
+    <p>Invertir permite hacer crecer tu dinero con el paso del tiempo...</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="150">
+    <h2>¿Es complicado?</h2>
+    <p>No. Aunque parece un tema difícil...</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1642790106114-2bd395673eee?auto=format&fit=crop&w=1200&q=80" width="100%" data-aos="zoom-in" />
+
+  <div class="card" data-aos="fade-up" data-aos-delay="200">
+    <h2>Paso a paso para comprar acciones</h2>
+    <ol>
+      <li>Abrir una cuenta en una casa de bolsa regulada.</li>
+      <li>Depositar fondos desde tu banco.</li>
+      <li>Elegir la empresa...</li>
+    </ol>
+  </div>
+
+  <div class="card" data-aos="fade-left" data-aos-delay="250">
+    <h2>Línea del tiempo del inversionista principiante</h2>
+    <ul>
+      <li><strong>Día 1:</strong> Aprendes qué son las acciones.</li>
+      <li><strong>Día 2:</strong> Abres una cuenta...</li>
+    </ul>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="300">
+    <h2>Conceptos clave</h2>
+    <ul>
+      <li><strong>Acción:</strong> Parte de una empresa.</li>
+      <li><strong>Bolsa:</strong> Lugar donde se compran acciones.</li>
+    </ul>
+  </div>
+
+  <div class="card" data-aos="fade-right" data-aos-delay="350">
+    <h2>Glosario rápido</h2>
+    <p><strong>Broker:</strong> Plataforma para comprar acciones.</p>
+    <p><strong>Portafolio:</strong> Conjunto de tus inversiones.</p>
+  </div>
+
+  <div style="text-align:center; margin-top:30px;" data-aos="zoom-in" data-aos-delay="400">
+    <button style="background:gold; color:#000; padding:15px 25px; border:none; border-radius:12px; font-size:18px; cursor:pointer; font-weight:bold;">
+      Comienza aquí
+    </button>
+  </div>
+</section>
+
+<!-- CONÓCENOS -->
+<section id="conocenos" class="section" data-aos="fade-up">
+  <h1>Conócenos</h1>
+  <p>Soy un adolescente de 15 años apasionado por el emprendimiento...</p>
+  <div class="card" data-aos="flip-left">
+    <h2>Mi objetivo</h2>
+    <p>Explicar cómo funcionan las acciones...</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a" width="100%" data-aos="fade-up" />
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" class="section" data-aos="fade-up">
+  <h1>Videos recomendados</h1>
+  <div class="video-card" data-aos="fade-right">
+    <p>Introducción a la bolsa</p>
+    <button class="learn" onclick="window.open('https://www.youtube.com/watch?v=-DKtkBQM-qo')">Learn now</button>
+  </div>
+</section>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
 </body>
 </html>
+
